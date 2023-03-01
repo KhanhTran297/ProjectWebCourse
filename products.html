@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/magnify.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Product</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header style="position: sticky">
+      <div class="box">
+        <div class="logo">
+          <a href="" class="logo-box">
+            <img src="./img/logo.jpg" alt="" />
+          </a>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="products.html">PRODUCT</a></li>
+            <li><a href="">CONTACT</a></li>
+            <li><a href="">SHOP</a></li>
+          </ul>
+        </div>
+        <div class="search">
+          <form action="" class="search-box">
+            <input
+              type="text"
+              class="search-text"
+              placeholder="Tim Kiem"
+              required
+            />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="shop">
+          <i class="fa-solid fa-basket-shopping"></i>
+        </div>
+        <div class="user">
+          <a href="" class="user-box">
+            <img src="./img/namngu.jpg" alt="" />
+          </a>
+          <div class="user-dropdown" style="display: none">
+            <a href="">Thông tin cá nhân</a>
+            <a href="">Mục yêu Thích</a>
+            <a href="">Lịch sử giao dịch</a>
+            <a href="">Log out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Box Container -->
+    <div class="content">
+      <div class="boxContainer">
+        <div class="titleContainer">
+          <div class="boxTitle">
+            <h3>Men'Trainer & Shoes <span>(558)</span></h3>
+          </div>
+          <div class="boxBtn">
+            <div class="filter-btn" onclick="toggleFilterBox()">
+              <p>Hide Filters <i class="fa-solid fa-list"></i></p>
+            </div>
+            <div class="Sort-btn" onclick="activeDropDown()">
+              <p>Sort by <i class="fa-solid fa-arrow-down"></i></p>
+              <div class="dropDownWrapper">
+                <div class="sortDropDown">
+                  <a href="">Featured</a>
+                  <a href="">Newest</a>
+                  <a href="">Price: High-Low</a>
+                  <a href="">Price: Low-High</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bodyContainer">
+          <div class="filterContainer">
+            <div class="genderBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('genderBox')">
+                <p>Gender</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+                <br />
+                <input
+                  type="checkbox"
+                  id="female"
+                  name="gender"
+                  value="female"
+                />
+                <label for="female">Female</label>
+              </div>
+            </div>
+            <div class="onSaleBox filterBox">
+              <div class="titleBox " onclick="toggleFilterBoxItem('onSaleBox')">
+                <p>On Sale</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="sale" name="sale" value="sale" />
+                <label for="sale">Sale</label>
+              </div>
+            </div>
+            <div class="priceBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('priceBox')">
+                <p>Shop By Price</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="500" name="price" value="500" />
+                <label for="price">Under 500.000 VND</label>
+                <br />
+                <input type="checkbox" id="1000" name="price" value="1000" />
+                <label for="price">500.000 - 1.000.000 VND</label>
+                <br />
+                <input type="checkbox" id="2000" name="price" value="2000" />
+                <label for="price">Above 1.000.000 VND</label>
+              </div>
+            </div>
+            <div class="sizeBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('sizeBox')">
+                <p>Size</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <div class="sizeItemWrap">
+                  <div class="sizeItem">35.5</div>
+                  <div class="sizeItem">36</div>
+                  <div class="sizeItem">36.5</div>
+                  <div class="sizeItem">37.5</div>
+                  <div class="sizeItem">38</div>
+                  <div class="sizeItem">38.5</div>
+                  <div class="sizeItem">39</div>
+                  <div class="sizeItem">40</div>
+                  <div class="sizeItem">40.5</div>
+                  <div class="sizeItem">41</div>
+                  <div class="sizeItem">42</div>
+                  <div class="sizeItem">42.5</div>
+                </div>
+              </div>
+            </div>
+            <div class="colorBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('colorBox')">
+                <p>Colour</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <div class="colorItemWrap">
+                  <div class="colorItem">
+                    <div class="colorOption" style="background-color: black;" id="black"></div>
+                    <span>Black</span>
+                  </div>
+                  <div class="colorItem">
+                    <div class="colorOption" style="background-color: red;"></div>
+                    <span>Red</span>
+                  </div>
+                  <div class="colorItem">
+                    <div class="colorOption" style="background-color: blue;"></div>
+                    <span>Blue</span>
+                  </div>
+                  <div class="colorItem">
+                    <div class="colorOption" style="background-color: brown;"></div>
+                    <span>Brown</span>
+                  </div>
+                  <div class="colorItem" >
+                    <div class="colorOption" style="background-color: grey;"></div>
+                    <span>Grey</span>
+                  </div>
+                  <div class="colorItem" >
+                    <div class="colorOption" style="background-color: green;"></div>
+                    <span>Green</span>
+                  </div>
+                  <div class="colorItem">
+                    <div class="colorOption" style="background-color:#fff;"></div>
+                    <span>White</span>
+                  </div>
+                  <div class="colorItem">
+                    <div class="colorOption" style="background-color: pink;"></div>
+                    <span>Pink</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="brandBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('brandBox')">
+                <p>Brand</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input type="checkbox" id="nike" name="brand" value="nike" />
+                <label for="male">Nike</label>
+                <br />
+                <input type="checkbox" id="puma" name="brand" value="puma" />
+                <label for="female">Puma</label>
+                <br />
+                <input type="checkbox" id="vans" name="brand" value="vans" />
+                <label for="female">Vans</label>
+              </div>
+            </div>
+            <div class="materialBox filterBox">
+              <div class="titleBox" onclick="toggleFilterBoxItem('materialBox')">
+                <p>Material</p>
+                <i class="fa-solid fa-arrow-down"></i>
+              </div>
+              <div class="boxContent">
+                <input
+                  type="checkbox"
+                  id="canvas"
+                  name="material"
+                  value="canvas"
+                />
+                <label for="male">Canvas</label>
+                <br />
+                <input
+                  type="checkbox"
+                  id="leather"
+                  name="material"
+                  value="leather"
+                />
+                <label for="female">Leather</label>
+              </div>
+            </div>
+          </div>
+          <div class="productContainer">
+            <div class="latest-product">
+              <div class="product-container">
+                  <div class="product-item">
+                      <div class="product-icon">
+                          <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                          <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                      </div>
+                      <div class="product-content">
+                          <img src="./img/product4/5.png" alt="" class="product-img">
+                          <h3>Nike Shoes</h3>
+                          <div class="price">200.000VND <span>150.000VND</span></div>
+                      </div>
+                  </div>
+                  <div class="product-item">
+                      <div class="product-icon">
+                          <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                          <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                      </div>
+                      <div class="product-content">
+                          <img src="./img/product4/6.png" alt="" class="product-img">
+                          <h3>Nike Shoes</h3>
+                          <div class="price">200.000VND <span>150.000VND</span></div>
+                      </div>
+                  </div>
+                  <div class="product-item">
+                      <div class="product-icon">
+                          <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                          <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                      </div>
+                      <div class="product-content">
+                          <img src="./img/product4/7.png" alt="" class="product-img">
+                          <h3>Nike Shoes</h3>
+                          <div class="price">200.000VND <span>150.000VND</span></div>
+                      </div>
+                  </div>
+                  <div class="product-item">
+                      <div class="product-icon">
+                          <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                          <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                      </div>
+                      <div class="product-content">
+                          <img src="./img/product4/7.png" alt="" class="product-img">
+                          <h3>Nike Shoes</h3>
+                          <div class="price">200.000VND <span>150.000VND</span></div>
+                      </div>
+                  </div>
+                  <div class="product-item">
+                      <div class="product-icon">
+                          <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                          <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                      </div>
+                      <div class="product-content">
+                          <img src="./img/product4/7.png" alt="" class="product-img">
+                          <h3>Nike Shoes</h3>
+                          <div class="price">200.000VND <span>150.000VND</span></div>
+                      </div>
+                  </div>
+                  <div class="product-item">
+                      <div class="product-icon">
+                          <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                          <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                      </div>
+                      <div class="product-content">
+                          <img src="./img/product4/7.png" alt="" class="product-img">
+                          <h3>Nike Shoes</h3>
+                          <div class="price">200.000VND <span>150.000VND</span></div>
+                      </div>
+                  </div>
+                  <div class="product-item">
+                    <div class="product-icon">
+                        <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                        <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="product-content">
+                        <img src="./img/product4/7.png" alt="" class="product-img">
+                        <h3>Nike Shoes</h3>
+                        <div class="price">200.000VND <span>150.000VND</span></div>
+                    </div>
+                </div>
+                <div class="product-item">
+                  <div class="product-icon">
+                      <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                      <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </div>
+                  <div class="product-content">
+                      <img src="./img/product4/7.png" alt="" class="product-img">
+                      <h3>Nike Shoes</h3>
+                      <div class="price">200.000VND <span>150.000VND</span></div>
+                  </div>
+              </div>
+              <div class="product-item">
+                <div class="product-icon">
+                    <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                    <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="product-content">
+                    <img src="./img/product4/7.png" alt="" class="product-img">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">200.000VND <span>150.000VND</span></div>
+                </div>
+            </div>
+            <div class="product-item">
+              <div class="product-icon">
+                  <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                  <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+              <div class="product-content">
+                  <img src="./img/product4/7.png" alt="" class="product-img">
+                  <h3>Nike Shoes</h3>
+                  <div class="price">200.000VND <span>150.000VND</span></div>
+              </div>
+          </div>
+          <div class="product-item">
+            <div class="product-icon">
+                <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+                <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="product-content">
+                <img src="./img/product4/7.png" alt="" class="product-img">
+                <h3>Nike Shoes</h3>
+                <div class="price">200.000VND <span>150.000VND</span></div>
+            </div>
+        </div>
+        <div class="product-item">
+          <div class="product-icon">
+              <a href="" class="heart-icon"><i class="fa-solid fa-heart"></i></i></a>
+              <a href="" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+          </div>
+          <div class="product-content">
+              <img src="./img/product4/7.png" alt="" class="product-img">
+              <h3>Nike Shoes</h3>
+              <div class="price">200.000VND <span>150.000VND</span></div>
+          </div>
+      </div>
+              </div> 
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End BoxContainer -->
+    <!-- Footer -->
+    <div class="footer-container">
+          <div class="footer">
+              <div class="footer-heading footer-1">
+                  <h2>GET HELP</h2>
+                  <h2>BECOME A MEMBER</h2>
+                  <h2>SIGN UP FOR EMAIL</h2>
+                  <h2>SEND US FEEDBACK</h2>
+                  
+              </div>
+              <div class="footer-heading footer-2">
+                  <h2>GET HELP</h2>
+                  <a href="#">Order Status</a>
+                  <a href="#">Delivery</a>
+                  <a href="#">Returns</a>
+                  <a href="#">Payment Options</a>
+                  <a href="#">Contact Us</a>
+              </div>
+              <div class="footer-heading footer-3">
+                  <h2>ABOUT US</h2>
+                  <a href="#">News</a>
+                  <a href="#">Careers</a>
+                  <a href="#">Investors</a>
+                  <a href="#">Sustainability</a>
+              </div>
+              <div class="footer-email-form">
+                  <h2>Join our newsletter</h2>
+                  <input type ="email" placeholder="Enter your email address" id="footer-email">
+                  <input type="submit" value="Sign up"
+                  id="footer-email-btn"> 
+              </div>
+              <div class="footer-payment-container">
+                  <h2>PAYMENT </h2>
+                  <img width="250px" src="./img/footer/payment.jpg" alt="">
+              </div>
+          </div>
+          <div class="copyright">
+              <div class="copyright-container">
+                  <p>©2023 SeekYourShoes. All Rights Reserved.</p>
+              </div>
+          </div>
+    </div>
+    <!-- End footer -->
+    <script src="./js/products.js"></script>
+  </body>
+</html>
